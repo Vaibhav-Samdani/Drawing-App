@@ -11,7 +11,7 @@ let sizeSlider = document.getElementById("mySize");
 let fillCheck = document.getElementById("fillColor");
 let colors = document.querySelectorAll(".color-circle");
 let colorPicker = document.getElementById('color-picker')
-// console.log(colors);
+
 
 let isfillColor;
 
@@ -92,12 +92,9 @@ const drawing = (e) => {
     drawCicle(e);
   } else if (selectedTool === "triangle") {
     drawTriangle(e);
-  } else {
-    console.log("Nothing");
-  }
+  } 
 };
 
-// console.log(tools);
 
 const startDrawing = (e) => {
   isDraw = true;
@@ -117,13 +114,11 @@ const startDrawing = (e) => {
 
 tools?.forEach((btn) => {
   // selectedTool = btn.id;
-  //   console.log("tools",tools,"btn",btn);
 
   btn.addEventListener("click", () => {
     selectedTool = btn.id;
     document.querySelector(".selected")?.classList.remove("selected");
     btn.classList.add("selected");
-    console.log(btn.id);
   });
 });
 
@@ -140,12 +135,11 @@ save.addEventListener("click", () => {
 
 sizeSlider.addEventListener("change", () => {
   brushSize = sizeSlider.value;
-  console.log(brushSize);
+  
 });
 
 fillCheck.addEventListener("change", () => {
   isfillColor = fillCheck.checked;
-  console.log(isfillColor);
 });
 
 colors?.forEach((color) => {
