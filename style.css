@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+#canvas {
+  /* border: 2px solid black; */
+  background-color: #fff;
+}
+.controls {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: #fc4545;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+.subControls {
+  top: 10vh;
+  background: #f86060ce;
+}
+.tools,
+.extraButton {
+  background-color: rgba(16, 16, 16, 0.85);
+  border-radius: 30%;
+  padding: 7px;
+}
+.tools:hover,
+.tools:active,
+.selected,
+.extraButton:hover {
+  fill: rgb(0, 0, 0);
+  background: white;
+  transition: all 0.1s ease-in;
+  border-radius: 50%;
+}
+
+.selected {
+  fill: rgb(0, 0, 0);
+  background: white;
+  transition: all 0.1s ease-in;
+  border-radius: 50%;
+}
+
+.shapes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#fillColor {
+  cursor: pointer;
+  height: 14px;
+  width: 14px;
+}
+#filColor:checked ~ label {
+  color: #4a98f7;
+}
+
+.colors {
+  display: flex;
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 5px;
+  position: relative;
+}
+
+.white {
+  background-color: white;
+}
+
+.black {
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.multiColor {
+  background-color: #007bff;
+}
+
+.multiColor > input {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.color-selected::before {
+  content: "";
+  top: 50%;
+  left: 50%;
+  height: 22px;
+  width: 22px;
+  background: inherit;
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: inherit;
+  transform: translate(-50%, -50%);
+}
+
+.white::before{
+  border-width: 3px;
+  border-color: #ccc;
+}
